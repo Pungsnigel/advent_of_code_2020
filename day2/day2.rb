@@ -11,9 +11,9 @@ end
 puts "Solution for day 2 part a: #{valid_passwords}"
 
 valid_passwords = input.count do |attempt|
-  positions, char, password = attempt.delete(':', '').split(' ')
+  positions, char, password = attempt.delete(':').split(' ')
   a, b = positions.split('-').map(&:to_i).map(&:pred)
-  (password[a] == char || password[b] == char) && (password[a] != password[b])
+  (password[a] == char) ^ (password[b] == char)
 end
 
 puts "Solution for day 2 part b: #{valid_passwords}"
