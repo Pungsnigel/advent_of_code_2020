@@ -5,7 +5,8 @@ trees_encountered = input.each_with_index.count do |line, i|
 end
 puts "Solution for day 3 part a: #{trees_encountered}"
 
-trees_per_slope = [[1, 1], [3, 1], [5, 1], [7, 1], [1, 2]].map do |x_jump, y_jump|
+slope_instructions = [[1, 1], [3, 1], [5, 1], [7, 1], [1, 2]]
+trees_per_slope = slope_instructions.map do |x_jump, y_jump|
   input.each_with_index.count do |line, i|
     next unless (i % y_jump).zero?
 
